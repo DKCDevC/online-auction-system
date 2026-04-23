@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-<<<<<<< HEAD
-=======
-import javafx.scene.control.CheckBox; // ĐÃ THÊM
->>>>>>> 6dd5a76 (change login)
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -22,10 +19,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-<<<<<<< HEAD
-=======
-import java.util.prefs.Preferences; // ĐÃ THÊM
->>>>>>> 6dd5a76 (change login)
+import java.util.prefs.Preferences;
 
 public class LoginController {
 
@@ -33,14 +27,12 @@ public class LoginController {
     @FXML private PasswordField txtPassword;
     @FXML private Button btnLogin;
     @FXML private Label lblError;
-<<<<<<< HEAD
-=======
-    @FXML private CheckBox chkRemember; // ĐÃ THÊM: Biến điều khiển CheckBox
+    @FXML private CheckBox chkRemember;
 
-    // ĐÃ THÊM: Khai báo Preferences để lưu thông tin vào hệ thống máy tính
+    // Khai báo Preferences để lưu thông tin vào hệ thống máy tính
     private Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
 
-    // ĐÃ THÊM: Hàm initialize tự động chạy khi mở màn hình
+    // Hàm initialize tự động chạy khi mở màn hình
     @FXML
     public void initialize() {
         // Lấy thông tin đã lưu (nếu có)
@@ -56,7 +48,6 @@ public class LoginController {
             }
         }
     }
->>>>>>> 6dd5a76 (change login)
 
     // Bắt sự kiện khi bấm nút Đăng nhập
     @FXML
@@ -91,10 +82,8 @@ public class LoginController {
 
                 Platform.runLater(() -> {
                     if ("SUCCESS".equals(status)) {
-<<<<<<< HEAD
-=======
 
-                        // --- ĐÃ THÊM: LƯU THÔNG TIN NẾU CHỌN DUY TRÌ ĐĂNG NHẬP ---
+                        // --- LƯU THÔNG TIN NẾU CHỌN DUY TRÌ ĐĂNG NHẬP ---
                         if (chkRemember != null && chkRemember.isSelected()) {
                             prefs.put("username", username);
                             prefs.put("password", password);
@@ -106,7 +95,6 @@ public class LoginController {
                         }
                         // ---------------------------------------------------------
 
->>>>>>> 6dd5a76 (change login)
                         // 1. Lấy role từ JSON do Server trả về
                         String role = jsonResponse.get("role").getAsString();
 
@@ -127,12 +115,8 @@ public class LoginController {
                                 SellerDashboardController sellerCtrl = loader.getController();
                                 sellerCtrl.setUserInfo(username);
 
-<<<<<<< HEAD
-                                stage.setScene(new Scene(root, 500, 550));
-=======
                                 stage.setScene(new Scene(root));
                                 stage.setMaximized(true); // Đã chỉnh để bung toàn màn hình
->>>>>>> 6dd5a76 (change login)
                             } else {
                                 // Mở giao diện Đấu giá (Dành cho Bidder / Admin)
                                 loader = new FXMLLoader(getClass().getResource("/views/Dashboard.fxml"));
@@ -141,15 +125,9 @@ public class LoginController {
                                 DashboardController dashboard = loader.getController();
                                 dashboard.setUserInfo(username, role);
 
-<<<<<<< HEAD
-                                stage.setScene(new Scene(root, 800, 600));
-                            }
-                            stage.centerOnScreen(); // Đưa cửa sổ ra giữa màn hình
-=======
                                 stage.setScene(new Scene(root));
                                 stage.setMaximized(true); // Đã chỉnh để bung toàn màn hình
                             }
->>>>>>> 6dd5a76 (change login)
                         } catch (Exception e) {
                             e.printStackTrace();
                             lblError.setTextFill(javafx.scene.paint.Color.web("#ff3b30"));
@@ -170,19 +148,14 @@ public class LoginController {
         }).start();
     }
 
-    // --- THÊM MỚI: Bắt sự kiện khi bấm nút "Đăng ký ngay" ---
+    // Bắt sự kiện khi bấm nút "Đăng ký ngay"
     @FXML
     public void handleGoToSignUp(ActionEvent event) {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/views/SignUp.fxml"));
-<<<<<<< HEAD
-            stage.setScene(new Scene(root, 400, 500));
-            stage.centerOnScreen();
-=======
             stage.setScene(new Scene(root));
             stage.setMaximized(true); // Đã chỉnh để bung toàn màn hình
->>>>>>> 6dd5a76 (change login)
         } catch (Exception e) {
             e.printStackTrace();
         }

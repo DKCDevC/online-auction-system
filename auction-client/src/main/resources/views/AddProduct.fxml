@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF; -fx-font-family: 'Segoe UI', sans-serif;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddProductController">
+    <children>
+        <!-- Tiêu đề cố định ở trên -->
+        <VBox alignment="CENTER_LEFT" prefHeight="80.0" style="-fx-border-color: transparent transparent #e0e0e0 transparent; -fx-padding: 0 40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label text="Complete your listing" textFill="#191919">
+                <font><Font name="System Bold" size="28.0" /></font>
+            </Label>
+        </VBox>
+
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #FFFFFF;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+            <content>
+                <VBox spacing="40.0" style="-fx-padding: 30 40;">
+                    
+                    <!-- 1. PHOTOS & VIDEO -->
+                    <VBox spacing="15.0">
+                        <Label text="PHOTOS &amp; VIDEO" textFill="#707070">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <HBox spacing="15.0" alignment="CENTER_LEFT">
+                            <Button onAction="#handleUploadPhoto" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #f7f7f7; -fx-border-color: #d3d3d3; -fx-border-style: dashed; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand;" text="Upload photos&#10;or drag and drop" textAlignment="CENTER" textFill="#0654ba" />
+                            <FlowPane fx:id="photoContainer" hgap="10" vgap="10" prefWrapLength="500" />
+                        </HBox>
+                        <Label text="Accepts .webp, .jpg, .jpeg, .png" textFill="#8f8f8f">
+                            <font><Font size="12.0" /></font>
+                        </Label>
+                    </VBox>
+                    <Separator />
+
+                    <!-- 2. TITLE -->
+                    <VBox spacing="15.0">
+                        <Label text="TITLE" textFill="#707070">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <VBox spacing="5.0">
+                            <Label text="Item title" textFill="#191919"><font><Font name="System Bold" size="14.0" /></font></Label>
+                            <TextField fx:id="txtProductName" prefHeight="45.0" promptText="Enter your item title" style="-fx-border-color: #8f8f8f; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                        </VBox>
+                    </VBox>
+                    <Separator />
+
+                    <!-- 3. ITEM CATEGORY -->
+                    <VBox spacing="15.0">
+                        <Label text="ITEM CATEGORY" textFill="#707070">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <VBox spacing="5.0">
+                            <Label text="Store category" textFill="#191919"><font><Font name="System Bold" size="14.0" /></font></Label>
+                            <ComboBox fx:id="cboCategory" prefHeight="45.0" prefWidth="300.0" promptText="Select category" style="-fx-border-color: #8f8f8f; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                        </VBox>
+                    </VBox>
+                    <Separator />
+
+                    <!-- 4. PRICING & DURATION -->
+                    <VBox spacing="15.0">
+                        <Label text="PRICING &amp; DURATION" textFill="#707070">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <HBox spacing="20.0">
+                            <VBox spacing="5.0">
+                                <Label text="Starting Price (VND)" textFill="#191919"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                <TextField fx:id="txtStartPrice" prefHeight="45.0" prefWidth="250.0" promptText="VD: 5000000" style="-fx-border-color: #8f8f8f; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                            </VBox>
+                            <VBox spacing="5.0">
+                                <Label text="Auction Duration" textFill="#191919"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                <ComboBox fx:id="cboDuration" prefHeight="45.0" prefWidth="200.0" promptText="Select duration" style="-fx-border-color: #8f8f8f; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <Separator />
+
+                    <!-- 5. DESCRIPTION -->
+                    <VBox spacing="15.0">
+                        <Label text="DESCRIPTION" textFill="#707070">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <TextArea fx:id="txtDescription" prefHeight="150.0" promptText="Describe your item..." style="-fx-border-color: #8f8f8f; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 5;" />
+                    </VBox>
+                    
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <!-- Thanh nút bấm cố định ở dưới -->
+        <HBox alignment="CENTER_RIGHT" prefHeight="80.0" spacing="15.0" style="-fx-border-color: #e0e0e0 transparent transparent transparent; -fx-background-color: #FFFFFF; -fx-padding: 0 40;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label fx:id="lblStatus" textFill="#ff3b30" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleCancel" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: #0654ba; -fx-border-color: #0654ba; -fx-border-radius: 20; -fx-border-width: 1.5; -fx-font-weight: bold; -fx-cursor: hand;" text="Cancel" />
+            <Button onAction="#handleSaveProduct" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #3665f3; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold; -fx-cursor: hand;" text="List item" />
+        </HBox>
+    </children>
+</AnchorPane>

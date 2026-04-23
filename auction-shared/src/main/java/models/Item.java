@@ -9,6 +9,7 @@ public abstract class Item extends Entity {
     private double currentHighestPrice;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+    protected Seller seller;
 
     public Item(String name, String description, double startingPrice, LocalDateTime startTime, LocalDateTime endTime) {
         super();
@@ -65,5 +66,13 @@ public abstract class Item extends Entity {
 
     public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
+    }
+
+    public Seller getSeller(){
+        return seller;
+    }
+
+    public void setSeller(Seller seller){
+        this.seller=seller;
     }
 }

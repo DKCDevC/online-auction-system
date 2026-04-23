@@ -2,6 +2,7 @@ package services;
 
 import models.Art;
 import models.Electronics;
+import models.GeneralItem;
 import models.Item;
 import models.Vehicle;
 
@@ -14,7 +15,8 @@ public class ItemFactory {
 
         switch (type.toUpperCase()) {
             case "ELECTRONICS":
-                int warranty = Integer.parseInt(extraInfo);
+                int warranty = 0;
+                try { warranty = Integer.parseInt(extraInfo); } catch (NumberFormatException e) { /* mặc định 0 */ }
                 return new Electronics(name, description, startingPrice, startTime, endTime, warranty);
 
             case "ART":
@@ -22,6 +24,9 @@ public class ItemFactory {
 
             case "VEHICLE":
                 return new Vehicle(name, description, startingPrice, startTime, endTime, extraInfo);
+
+            case "GENERAL":
+                return new GeneralItem(name, description, startingPrice, startTime, endTime);
 
             default:
                 throw new IllegalArgumentException("Lỗi: Loại sản phẩm không được hỗ trợ (" + type + ")");

@@ -20,22 +20,14 @@ public class MainUI extends Application {
         }
 
         Parent root = FXMLLoader.load(fxmlLocation);
-<<<<<<< HEAD
-        primaryStage.setTitle("Auction Client");
-
-        // Kích thước chuẩn đẹp
-        Scene scene = new Scene(root, 400, 500);
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false); // Khóa resize để giữ form chuẩn
-=======
         primaryStage.setTitle("Hệ thống Đấu giá ebid");
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
+        // Lệnh bung toàn màn hình chuẩn xác
         primaryStage.setMaximized(true);
 
->>>>>>> 6dd5a76 (change login)
         primaryStage.show();
     }
 

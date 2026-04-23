@@ -4,40 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #F5F5F7; -fx-font-family: '-apple-system', 'Segoe UI', sans-serif;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
-    <children>
-        <VBox alignment="CENTER" layoutX="40.0" layoutY="50.0" prefHeight="400.0" prefWidth="320.0" spacing="20.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 30, 0, 0, 10); -fx-padding: 30;">
-            <children>
-
-                <Label text="Đăng Nhập">
-                    <font>
-                        <Font name="System Bold" size="28.0" />
-                    </font>
-                </Label>
-                <Label text="Hệ thống đấu giá nội bộ" textFill="#8e8e93">
-                    <font>
-                        <Font size="13.0" />
-                    </font>
-                </Label>
-
-                <Region prefHeight="10.0" />
-
-                <TextField fx:id="txtUsername" focusTraversable="false" prefHeight="45.0" promptText="Tên đăng nhập" style="-fx-background-color: #F2F2F7; -fx-background-radius: 12; -fx-padding: 10 15; -fx-font-size: 14px;" />
-
-                <PasswordField fx:id="txtPassword" focusTraversable="false" prefHeight="45.0" promptText="Mật khẩu" style="-fx-background-color: #F2F2F7; -fx-background-radius: 12; -fx-padding: 10 15; -fx-font-size: 14px;" />
-
-                <Label fx:id="lblError" textFill="#ff3b30" wrapText="true" />
-
-                <Region prefHeight="10.0" />
-
-                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="45.0" prefWidth="260.0" style="-fx-background-color: #007AFF; -fx-text-fill: white; -fx-background-radius: 12; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Đăng nhập hệ thống" />
-
-                <Button mnemonicParsing="false" onAction="#handleGoToSignUp" style="-fx-background-color: transparent; -fx-text-fill: #007AFF; -fx-cursor: hand;" text="Chưa có tài khoản? Đăng ký ngay" />
-
-            </children>
-        </VBox>
-=======
 <AnchorPane style="-fx-background-color: #FFFFFF; -fx-font-family: '-apple-system', 'Segoe UI', sans-serif;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
     <children>
 
@@ -80,7 +46,7 @@
                         <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" maxWidth="Infinity" style="-fx-background-color: #3665f3; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Tiếp tục" />
 
                         <HBox alignment="CENTER" spacing="5.0">
-                            <CheckBox mnemonicParsing="false" text="Duy trì đăng nhập" textFill="#191919" style="-fx-cursor: hand;" id="chkRemember">
+                            <CheckBox fx:id="chkRemember" mnemonicParsing="false" text="Duy trì đăng nhập" textFill="#191919" style="-fx-cursor: hand;">
                                 <font><Font size="14.0"/></font>
                             </CheckBox>
                             <Label text=" ⓘ" textFill="#707070" style="-fx-cursor: hand;">
@@ -94,6 +60,5 @@
             </children>
         </StackPane>
 
->>>>>>> 6dd5a76 (change login)
     </children>
 </AnchorPane>

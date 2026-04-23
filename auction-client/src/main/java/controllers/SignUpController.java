@@ -73,19 +73,12 @@ public class SignUpController {
         }).start();
     }
 
-<<<<<<< HEAD
-=======
     // Đã sửa lại hàm này để chuyển cảnh mượt mà và giữ nguyên toàn màn hình
->>>>>>> 6dd5a76 (change login)
     @FXML
     public void handleBackToLogin(ActionEvent event) {
         try {
             Stage stage = (Stage) txtUsername.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/views/Login.fxml"));
-<<<<<<< HEAD
-            stage.setScene(new Scene(root, 400, 500));
-        } catch (Exception e) { e.printStackTrace(); }
-=======
 
             // Dòng lệnh quan trọng vừa được bổ sung
             stage.setScene(new Scene(root));
@@ -94,6 +87,5 @@ public class SignUpController {
         } catch (Exception e) {
             e.printStackTrace();
         }
->>>>>>> 6dd5a76 (change login)
     }
 }

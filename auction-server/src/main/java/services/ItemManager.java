@@ -10,7 +10,6 @@ public class ItemManager {
     private ItemDAO itemDAO;
 
     private ItemManager() {
-        // Khởi tạo DAO thay vì HashMap
         itemDAO = new ItemDAO();
     }
 
@@ -21,16 +20,18 @@ public class ItemManager {
         return instance;
     }
 
-    public boolean addItem(String productId, Item newItem, Seller owner) {
-        boolean success = itemDAO.insertItem(productId, newItem);
-        if (success) {
-            System.out.println(">>> Seller [" + owner.getUsername() + "] đã lưu sản phẩm xuống Database: " + newItem.getName());
-        }
-        return success;
+    public void addItem(String id, Item item, Seller seller) {
+        // 1. Gắn seller vào item
+        item.setSeller(seller);
+
+        // 2. ĐÃ SỬA: Gọi DAO để lưu sản phẩm vào Database thay vì dùng biến 'items'
+        // Bạn cần đảm bảo trong ItemDAO đã có hàm addItem(String id, Item item)
+        itemDAO.addItem(id, item);
+
+        System.out.println(">>> Đã lưu sản phẩm " + item.getName() + " vào Database.");
     }
 
     public boolean updateItem(String productId, String newName, String newDesc, double newStartPrice) {
-        // Cập nhật thẳng vào Database
         return itemDAO.updateItem(productId, newName, newDesc, newStartPrice);
     }
 

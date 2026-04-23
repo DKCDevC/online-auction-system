@@ -60,8 +60,4 @@ public class UserDAO {
             return false;
         }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6dd5a76 (change login)
 }

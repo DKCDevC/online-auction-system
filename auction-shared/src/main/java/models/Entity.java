@@ -13,7 +13,7 @@ public abstract class Entity {
         return id;
     }
 
-    public void setId(){
-        this.id=id;
+    public void setId(String id){
+        this.id = id;
     }
 }

@@ -18,22 +18,12 @@ public class UserManager {
         return instance;
     }
 
-<<<<<<< HEAD
-    public boolean register(User newUser) {
-        return userDAO.registerUser(newUser);
-    }
-
-=======
     // Hàm Login
->>>>>>> 6dd5a76 (change login)
     public User login(String username, String password) {
         return userDAO.loginUser(username, password);
     }
 
-<<<<<<< HEAD
-=======
     // Hàm Register
->>>>>>> 6dd5a76 (change login)
     public boolean registerUser(String username, String password, String role) {
         return userDAO.insertUser(username, password, role);
     }

@@ -4,12 +4,18 @@ import models.Item;
 import models.Seller;
 import network.AuctionSocketServer;
 import services.AuctionManager;
+import utils.DBConnection; // --- ĐÃ THÊM: Import file kết nối DB ---
 
 import java.time.LocalDateTime;
 
 public class MainServer {
     public static void main(String[] args) {
         System.out.println("=== KHỞI ĐỘNG HỆ THỐNG ĐẤU GIÁ ===");
+
+        // --- ĐÃ THÊM: Kích hoạt kiểm tra và tạo bảng Database ---
+        System.out.println(">>> Đang kết nối và kiểm tra Database...");
+        DBConnection.getConnection();
+        // -------------------------------------------------------
 
         Seller seller1 = new Seller("nguoiban_01", "pass123", "seller@gmail.com");
 
